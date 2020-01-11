@@ -1,0 +1,23 @@
+div,
+span {
+  background-color: red;
+  font-family: "Courier New";
+  border-style: solid;
+  border-color: blue;
+  border-width: 5px;
+  margin: 10px;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  display: inline-block;
+}
+
+.btn {
+  margin: 5px;
+  padding: 5px;
+  border: 1px black solid;
+}

@@ -59,7 +59,7 @@ class WidgetTest extends HTMLElement {
 
     if (itemDate) {
       let cartItems = this.getCartItems();
-      cartItems.push({date: itemDate, url: window.location.pathname})
+      cartItems.push({date: itemDate, url: window.location.href.split("#")[0]})
       this.setCartItems(cartItems)
       this.renderCartItems()
     }

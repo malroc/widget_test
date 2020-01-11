@@ -48,7 +48,7 @@ class WidgetTest extends HTMLElement {
     let html = ""
 
     for (let item of cartItems) {
-      html += `<li>${item.date} - ${item.title}</li>`
+      html += `<li>${item.date} - <a href="${item.url}">${item.url}</a></li>`
     }
 
     cartItemsContainerElement.innerHTML = html || "The cart is empty"
@@ -59,7 +59,7 @@ class WidgetTest extends HTMLElement {
 
     if (itemDate) {
       let cartItems = this.getCartItems();
-      cartItems.push({date: itemDate, title: document.title})
+      cartItems.push({date: itemDate, url: window.location.pathname})
       this.setCartItems(cartItems)
       this.renderCartItems()
     }

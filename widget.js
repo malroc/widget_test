@@ -73,17 +73,9 @@ class WidgetTest extends HTMLElement {
 
 window.customElements.define("widget-test", WidgetTest);
 
-document.addEventListener("DOMContentLoaded", async function(){
-  let responseJson = null
-
-  // Stub server call for http/https and file protocol cases
-  if (location.protocol == "file:") {
-    responseJson = {"widgetContainerSelector": "#widgetplaceholder"}
-  } else {
-    let response = await fetch("./server.json")
-    responseJson = await response.json()
-  }
-
+document.addEventListener("DOMContentLoaded", function(){
+  // Stubbed server config response
+  let responseJson = {"widgetContainerSelector": "#widgetplaceholder"}
   let widgetContainerSelector = responseJson.widgetContainerSelector
   let widgetContainerElement = document.querySelector(widgetContainerSelector)
 
